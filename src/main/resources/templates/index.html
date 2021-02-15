@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>IN RUSSIA</title>
+</head>
+<body>
+<section>
+    <header>
+        <a href="#" class="logo">Путешествие</a>
+        <div class="toggle" onclick="toogleMenu();"></div>
+    </header>
+    <div class="content">
+        <h2>In<br>Russia</h2>
+    </div>
+    <div class="play" onclick="videoToggle();">
+        <img src="../static/img/play_48.png"><span>Play Video</span>
+    </div>
+    <ul class="sci">
+        <li><a href="#"><img src="/img/facebook (1).png"></a></li>
+        <li><a href="#"><img src="/img/instagram (2).png"></a></li>
+        <li><a href="#"><img src="/img/twitter (1).png"></a></li>
+    </ul>
+    <div class="navigation" onclick="toogleMenu();">
+        <ul>
+            <li> <a href="#">Домой</a></li>
+            <li> <a href="#">О нас</a></li>
+            <li> <a href="#">Войти</a></li>
+            <li> <a href="#">Создать</a></li>
+        </ul>
+    </div>
+</section>
+<div class="trailer">
+    <video src="/video/IN_RUSSIA.mp4" controls="true"></video>
+    <img src="/img/close.png" class="close" onclick=" videoToggle();">
+</div>
+<script type="text/javascript">
+    function toogleMenu() {
+        const menuToggle = document.querySelector('.toggle');
+        const navigation = document.querySelector('.navigation');
+        menuToggle.classList.toggle('active')
+        navigation.classList.toggle('active')
+    }
+
+    function videoToggle() {
+        const trailer = document.querySelector('.trailer');
+        const video = document.querySelector('video');
+        trailer.classList.toggle('active')
+        video.currentTime = 0;
+        video.pause();
+    }
+</script>
+</body>
+</html>
